@@ -1,0 +1,67 @@
+{
+	"Name":"Skyrim",
+	"Version":"1.1.8",
+	"Script":"SkyrimExtensionDriver.gd",
+	"Categories":
+	[
+		{
+			"Title":"Mods",
+			"Hidden":false,
+			"Tooltip":"The name of a mod included inside the mod-list.",
+			"Prompt":"Mod Name:",
+			"Size":200,
+			"Field":"String"
+		},
+		{
+			"Title":"Type",
+			"Hidden":false,
+			"Tooltip":"The type of a mod included inside the mod-list.",
+			"Prompt":"Mod Type:",
+			"Size":170,
+			"Field":"Select",
+			"Select":["Esp & Archives", "Esp Only", "Archives Only", "Patch", ".DLL Only", ".DLL & Archives", ".DLL & ESP", ".DLL & ESP & Archives", "Other"]
+		},
+		{
+			"Title":"Trend",
+			"Hidden":true,
+			"Tooltip":"Whether the mod should overwrite or be overwritten by the other mods.",
+			"Prompt":"Mod Trend:",
+			"Size":170,
+			"Field":"Select",
+			"Select":["Standard", "Get Overwritten", "Overwrite Others"]
+		},
+		{
+			"Title":"Version",
+			"Hidden":false,
+			"Tooltip":"The version number of a mod to install within the mod-list.",
+			"Prompt":"Mod Version:",
+			"Size":80,
+			"Field":"String"
+		},
+		{
+			"Title":"Source",
+			"Hidden":false,
+			"Tooltip":"The origin of where you can find a mod included inside the mod list.",
+			"Prompt":"Mod Origin:",
+			"Size":80,
+			"Field":"Select",
+			"Select":["Nexus", "AFK Mods", "LoversLab", "Mod DB", "Patreon", "Discord", "Other"]
+		},
+		{
+			"Title":"Priority Order",
+			"Hidden":false,
+			"Tooltip":"The order in which mod files, like meshes, should be loaded in.",
+			"Prompt":"Mod Files Priority Order:",
+			"Size":100,
+			"Field":"Integer"
+		},
+		{
+			"Title":"Load Order",
+			"Hidden":false,
+			"Tooltip":"The order in which mod plugins, like .esp/.esm files, should be loaded in.",
+			"Prompt":"Mod Plugin Load Order:",
+			"Size":80,
+			"Field":"Integer"
+		}
+	]
+}
