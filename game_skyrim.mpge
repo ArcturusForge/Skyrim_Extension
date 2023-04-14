@@ -1,6 +1,6 @@
 {
 	"Name":"Skyrim",
-	"Version":"1.1.8",
+	"Version":"1.1.9",
 	"Script":"SkyrimExtensionDriver.gd",
 	"Categories":
 	[
@@ -19,7 +19,7 @@
 			"Prompt":"Mod Type:",
 			"Size":170,
 			"Field":"Select",
-			"Select":["Esp & Archives", "Esp Only", "Archives Only", "Patch", ".DLL Only", ".DLL & Archives", ".DLL & ESP", ".DLL & ESP & Archives", "Other"]
+			"Select":["Esp & Archives", "Esp Only", "Archives Only", ".DLL Only", ".DLL & Archives", ".DLL & ESP", ".DLL & ESP & Archives", "Other"]
 		},
 		{
 			"Title":"Trend",

@@ -159,7 +159,7 @@ func sort_l_o():
 	var requiredByAll = []
 	var requiresAll = []
 	for mod in modlist:
-		# "Esp & Archives", "Esp Only", "Archives Only", "Patch", ".DLL Only", ".DLL & Archives", ".DLL & ESP", ".DLL & ESP & Archives", "Other"
+		# "Esp & Archives", "Esp Only", "Archives Only", ".DLL Only", ".DLL & Archives", ".DLL & ESP", ".DLL & ESP & Archives", "Other"
 		if mod.fields.Trend == "Get Overwritten":
 			requiredByAll.append(mod.extras.Link)
 		elif mod.fields.Trend == "Overwrite Others":
@@ -310,9 +310,9 @@ func scan_mods(modlist):
 				missingReq.append(req)
 			else:
 				var reqMod = modLinks[req.Link]
-				# "Esp & Archives", "Esp Only", "Archives Only", "Patch", ".DLL Only", ".DLL & Archives", ".DLL & ESP", ".DLL & ESP & Archives", "Other"
-				#- Hard overwriting Warning. Is an immediate error. For only Archives and Patches.
-				if mod.fields["Type"] == "Archives Only" || mod.fields["Type"] == "Patch":
+				# "Esp & Archives", "Esp Only", "Archives Only", ".DLL Only", ".DLL & Archives", ".DLL & ESP", ".DLL & ESP & Archives", "Other"
+				#- Hard overwriting Warning. Is an immediate error. For only Archives.
+				if mod.fields["Type"] == "Archives Only":
 					if	int(reqMod.fields["Priority Order"]) >= int(mod.fields["Priority Order"]):
 						var reqName = get_mod_name(reqMod)
 						var msg = "ERR117: (" + name + ") overwrites files from (" + reqName + ") however (" + reqName + ") is overwriting its files!"
@@ -326,7 +326,7 @@ func scan_mods(modlist):
 						scanData.add_custom(msg, 1)
 				
 				#- Hard overwriting Warning. Is an immediate error. For all Esp's.
-				if mod.fields["Type"] == "Esp & Archives" || mod.fields["Type"] == "Esp Only" || mod.fields["Type"] == "Patch" || mod.fields["Type"] == ".DLL & ESP" || mod.fields["Type"] == ".DLL & ESP & Archives" || mod.fields["Type"] == "Other":
+				if mod.fields["Type"] == "Esp & Archives" || mod.fields["Type"] == "Esp Only" || mod.fields["Type"] == ".DLL & ESP" || mod.fields["Type"] == ".DLL & ESP & Archives" || mod.fields["Type"] == "Other":
 					if int(reqMod.fields["Load Order"]) >= int(mod.fields["Load Order"]):
 						var reqName = get_mod_name(reqMod)
 						var msg = "ERR314: (" + name + ") requires (" + reqName + ") as a master however (" + reqName + ") has a higher load order!"
