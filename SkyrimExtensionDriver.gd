@@ -173,7 +173,7 @@ func sort_l_o():
 		continue
 	
 	for mod in modlist:
-		var requisiteMods = []
+		var requisiteMods = presentMods[mod.extras.Link].masters
 		for req in mod.extras.Required:
 			if presentMods.has(req.Link):
 				requisiteMods.append(presentMods[req.Link])
@@ -183,9 +183,11 @@ func sort_l_o():
 		
 		if mod.extras.has("Compatible"):
 			for com in mod.extras.Compatible:
-				if presentMods.has(com.Link):
+				if presentMods.has(com.Link) && "Do" in com.Overwrite && not presentMods[mod.extras.Link].masters.has(presentMods[com.Link]): # "Do Overwrite" or "Get Overwritten"
 					requisiteMods.append(presentMods[com.Link])
-		
+				elif presentMods.has(com.Link) && "Get" in com.Overwrite && not presentMods[com.Link].masters.has(presentMods[mod.extras.Link]):
+					presentMods[com.Link].masters.append(presentMods[mod.extras.Link])
+
 		presentMods[mod.extras.Link].masters = requisiteMods
 		continue
 

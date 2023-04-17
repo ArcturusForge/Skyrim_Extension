@@ -1,6 +1,6 @@
 {
 	"Name":"Skyrim",
-	"Version":"1.1.9",
+	"Version":"1.1.11",
 	"Script":"SkyrimExtensionDriver.gd",
 	"Categories":
 	[
